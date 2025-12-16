@@ -17,7 +17,6 @@ public class AsyncConfig {
         executor.setCorePoolSize(4);
         executor.setMaxPoolSize(4);
         executor.setQueueCapacity(100);
-        executor.setKeepAliveSeconds(10);
         executor.setAllowCoreThreadTimeOut(true);
         executor.setThreadNamePrefix("userThread-");
         executor.initialize();
