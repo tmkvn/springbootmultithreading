@@ -1,0 +1,55 @@
+server:
+  port: 8090
+
+# ==================== Application ====================
+spring:
+  application:
+    name: Test
+
+  # ==================== PostgreSQL Datasource ====================
+  datasource:
+    url: jdbc:postgresql://localhost:5432/test
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: postgres
+
+    # ==================== HikariCP Pool ====================
+    # hikari:
+    #   maximum-pool-size: 10
+    #   minimum-idle: 2
+    #   connection-timeout: 20000
+    #   idle-timeout: 300000
+    #   max-lifetime: 1200000
+    #   auto-commit: true
+
+  # ==================== JPA/Hibernate ====================
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        "[format_sql]": true
+        "[generate_statistics]": true
+
+  # ==================== Async Configuration ====================
+  # task:
+  #   execution:
+  #     pool:
+  #       core-size: 2
+  #       max-size: 2
+  #       queue-capacity: 100
+  #     thread-name-prefix: userThread-
+
+# ==================== Logging (tune for visibility) ====================
+# logging:
+#   level:
+#     root: INFO
+#     "[com.nitesh]": DEBUG
+#     "[org.springframework.web]": INFO
+#     "[org.springframework.data.jpa]": INFO
+#     "[org.hibernate.SQL]": DEBUG
+#     "[org.hibernate.type.descriptor.sql.BasicBinder]": DEBUG
+#     "[org.hibernate.stat]": DEBUG
+#     "[com.zaxxer.hikari]": DEBUG
